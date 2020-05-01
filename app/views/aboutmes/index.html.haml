@@ -1,0 +1,35 @@
+.header
+  .header__title
+    = link_to "About Me", aboutmes_path, class: "header__title--text"
+  .header__right
+    = link_to  current_user.name, user_path(current_user), class: "header__right--btn"
+    = link_to "ノックノック画面に戻る", root_path, class: "header__right--btn"
+    = link_to "新規プロフィール作成はこちら", new_aboutme_path, class: "header__right--btn"
+.contents
+  -# = yield
+  - @abouts.each do |about|
+    .cpontent
+
+      .content__left
+        .content__left--image
+          -# = about.image
+          = image_tag about.image
+          -# = @user.name
+          -# - if @about.image?
+          -#   = image_tag @about.image.url
+          -# - else
+          -#   = image_tag "noimage.gif"
+
+      .content__right
+        .content__right__top
+          -# = about.content
+          = link_to about.content, aboutme_path(about.id), class: "content__right__top--title"
+
+        .content__right__middle
+          = about.url
+        .content__right__bottom
+          .content__right__bottom--date
+            = about.user.name
+            -# user_idとアソシエーションより別テーブルから持ってくる
+            = about.created_at
+

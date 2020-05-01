@@ -1,0 +1,45 @@
+class GroupsController < ApplicationController
+
+
+
+  def index
+  end
+
+  def new
+    @group = Group.new
+    @group.users << current_user
+  end
+
+  def create
+    @group = Group.new(group_params)
+    if @group.save
+      redirect_to root_path, notice: "Doorを新規作成"
+      # 　TODO: root 変更
+    else
+      render :new
+    end
+  end
+
+
+
+  def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      redirect_to group_messages_path(current_user), notice: "ノック相手更新しました"
+      # 　TODO: root 変更
+    else
+      render :edit
+    end
+  end
+
+
+  private
+  def group_params
+    params.require(:group).permit(:name, user_ids: [])
+  end
+
+end

@@ -16,5 +16,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+
+
 # コミットしたくないファイル・ディレクトリを指定できる設定ファイル
 public/uploads/*
