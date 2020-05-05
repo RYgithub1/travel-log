@@ -1,0 +1,32 @@
+.header
+  .header__title
+    = link_to "About Me", aboutmes_path, class: "header__title--text"
+  .header__right
+    = link_to current_user.name, user_path(current_user), class: "header__right--btn"
+    = link_to "ノックノック画面に戻る", root_path, class: "header__right--btn"
+    = link_to "新規プロフィール作成はこちら", new_aboutme_path, class: "header__right--btn"
+.contents
+  -# = yield
+
+  .aboutImage
+    - if @about.image?
+      = image_tag @about.image.url
+    - else
+      = image_tag "noimage.gif"
+    -# = @about.image
+    -# .imageIcon
+    -#   = image_tag @about.image.url   if @about.image?
+
+  .aboutUrl
+    = @about.url
+  .aboutDate
+    = @about.created_at
+  .aboutAuthor
+
+  - if user_signed_in? && current_user.id == @about.user_id
+    .aboutManage
+      = link_to "プロフ編集はここから", edit_aboutme_path(@about.id), class: "postManage__edit"
+      = link_to "プロフ削除はここから", aboutme_path(@about.id), method: :delete, class: "postManage__delete"
+
+  .aboutText
+    = simple_format @about.content

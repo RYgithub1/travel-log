@@ -1,0 +1,54 @@
+
+.mainChat
+  .mainChat__header
+    .headTitle
+      Knock-Knock Door
+    .headProfile
+      .headImage
+        = link_to "アイコン）aboutmeの変数＠名前とリンク...", "#", class: "ownIntroduction"
+      .headName
+        = @group.name
+        （個人名へ変換）
+      .headPersonEdit
+        = link_to "ノック相手選択", edit_group_path(@group), class: "headPerson"
+
+
+    .headLink
+      .headSnsName
+        Facebook：
+      .headSnsUrl
+        = link_to "https://www.facebook.com/", class: "snsFacebook" do
+          証明する外部リンク先
+
+
+
+
+  .mainChat__contents
+    .mainChat__contents__content
+      〜〜〜 ノックノックトークスここから 〜〜〜
+      .messages
+        = render partial: "message", collection: @messages
+
+
+  .mainChat__forms
+    .mainChat__forms__former
+      .form
+        = form_for [@group, @message] do |fo|
+          = fo.text_field :content, class: "inputText", placeholder: "  knock-knock message!"
+          .form__pics
+            = fo.label :image, class: "inputImageLabel" do
+              = icon('fas', 'image', class: 'icon')
+              = fo.file_field :image, class: "inputImage"
+          = fo.submit "knock", class: "inputBtn"
+
+
+
+
+
+      -# .inputText
+      -#   %input.textx{:name => "textx", :placeholder => "  knock-knock message!", :type => "text", :value => "", :style =>"width: calc(100vw - 350px); height: 50px;"}/
+      -#   .inputImage
+      -#     -# %input.imagex{:name => "textx", :placeholder => "テキスト記入欄", :type => "text", :value => ""}/
+      -# -# .inputBtn
+      -#   %input.btnx{:name => "btnx", :type => "submit", :value => "knock", :style =>"width: 80px; height: 50px;"}/
+

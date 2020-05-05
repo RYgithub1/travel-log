@@ -1,0 +1,95 @@
+.html
+  .head
+    %meta{:charset => "utf-8"}/
+    -# %meta{:charset => "utf-8"}
+    -# .title
+      GeolocGoGo
+    -# %link{:href => "css/sample.css", :media => "all", :rel => "stylesheet"}
+    -# %script src="http://maps.google.com/maps/api/js?key={APIキー}"
+    -#   %style
+    -#     html { height: 100% }
+    -#     body { height: 100% }
+    -#     #map { height: 100%; width: 100%}
+    -# %style#map
+    -#   height: 400px;
+    -#   width: 600px;
+    -# %style#map{:type => "text/css"}
+    -# FIXME:
+    :css
+      #map {
+        height: 600px;
+        width: 90%;
+        margin:0 auto;
+      }
+      html,body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+
+  .body
+    .wrapper
+      -# = render "headerMap"
+      -# = render "contentsMap"
+      .headerMap
+        .headerMap__logo
+          Knock-Knock!
+        .headerMap__link
+          .headerMap__link__signUpBtn
+            = link_to "サインアップ", "#", class: "signUpBtnx"
+          .headerMap__link__loginBtn
+            = link_to "ログイン", "#", class: "loginBtnx"
+          .headerMap__link__myAboutBtn
+            = link_to "マイアバウト", "#", class: "myAboutBtnx"
+
+      .contentsMap
+        .contentsMap__mapx
+          .contentsMap__mapx__topWord
+            情報交換コラボレーション！
+          .contentsMap__mapx__middleMap
+            マップ埋め込み
+            ピン立てる-----
+            -# #js-map
+            -# .map
+            #map
+            -# %script#map{:type => "text/javascript"}
+            :javascript
+              var map;
+              function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                  center: {lat: 35.922707, lng: 139.485114},
+                  zoom: 8
+                });
+              }
+
+            %script{:src => "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"}
+
+
+          .contentsMap__mapx__bottomAbout
+            選択したピンのアバウト抜粋
+            ピンまでの距離
+            ピンの時間と国名都市名
+
+      .footerMap
+        .footerMap__foots
+          .footerMap__foots__mycompany
+            自己紹介
+          .footerMap__foots__rights
+            Copyright (C) 2020 Tahoo! Japan Corporation. All Rights Reserved.
+
+
+          -# FIXME:API key
+          -# body閉じタグの直前
+          -# %script{:src => "script.js"}
+          -# %script{:src => "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"}
+
+          -# :javascript
+          -#   :src => "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+          -# %script{:src => "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEYI&callback=initMap"}
+          -# %script{:src => "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer}
+          -# %script{:src => "script.js"}
+          -# %script{:src => "maps/script.js"}
+
+          -# %script{:type => "text/javascript",
+            -# :src  => "javascripts/script_#{2 + 7}"}

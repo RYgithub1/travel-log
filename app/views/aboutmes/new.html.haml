@@ -1,0 +1,55 @@
+.header
+  .header__title
+    = link_to "About Me", aboutmes_path, class: "header__title--text"
+  .header__right
+    = link_to current_user.name, user_path(current_user), class: "header__right--btn"
+    = link_to "ノックノック画面に戻る", root_path, class: "header__right--btn"
+    = link_to "新規プロフィール作成はこちら", new_aboutme_path, class: "header__right--btn"
+.contents
+  -# = yield
+  .profileTitle
+    新規プロフィールボタンリンク→About me(新規投稿プロフィール)
+    タイムゾーン
+    スポット
+    編集ボタンと削除ボタン
+    
+
+  .profileDatas
+    .profileData
+      = form_for @about do |fo|
+        .newText
+          = fo.label :name, "プロフィールを書こう"
+          %br
+          = fo.text_area :content, class: "newTextZ", placeholder: "国籍/ルート/期間/一言！"
+
+        .newImage
+          = fo.label :name, "写真アイコンを貼ろう"
+          %br
+          %i.fab.fa-tripadvisor
+            = fo.file_field :image, class: "newImageZ"
+        .newUrl
+          = fo.label :name, "SNSのURLを貼ろう"
+          %br
+          = fo.url_field :url, class: "newUrlZ"
+
+        -# .newUserId
+        -#   = fo.label :name, "user_idの番号を貼ろう（デフォ必要？）"
+        -#   = fo.text_field :user_id, class: "newUserId"
+
+
+        .newSendBtn
+          -# = link_to "新About決定ボタン", new_aboutme_path, class: "newSendBtnZ"
+          -# = fo.label :name, "新プロフ決定ボタン"
+          = fo.submit "新About決定ボタン", class: "newSendBtnZ"
+
+
+
+-# リンク押して新規プロフ作成ページへ
+        -# <%= link_to "新規投稿", new_post_path, class: "header__right--btn" %>
+
+-# = form_for(current_user) do |f|
+-# .form
+-#     = form_for [@message] do |f|
+-#       .input-box
+-#         = f.text_field :text, class: 'input-text'
+-#       = f.submit "Send", class: 'submit-btn'

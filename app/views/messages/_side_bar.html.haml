@@ -1,0 +1,22 @@
+
+.sideBar
+  .sideBar__informs
+
+    .sideBar__informs__infos
+      %li= link_to "トップページ", root_path, class:"topBtn"
+      %h3.currentUserName
+        = current_user.name
+      %li= link_to "ユーザ編集", edit_user_path(current_user), class:"userEditLink"
+      %li= link_to "AboutMeプロフィール", aboutmes_path(current_user), class:"userAboutmeLink"
+      %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logoutLink"
+
+    .sideBar__informs__groups
+      %li= link_to "新しいドア探そ", new_group_path, class:"newKnockLink"
+      - current_user.groups.each do |group|
+        .group
+          = link_to group_messages_path(group), class: "groupMessages" do
+            .groupKnockName
+              = group.name
+              ノックドア個人名へ統一
+            .groupKnockMessage
+              = group.show_last_message
