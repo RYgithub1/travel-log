@@ -1,5 +1,6 @@
 @import "reset";
 @import "config/colors";
+@import "modules/map";
 @import "modules/messages";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -8,7 +9,7 @@
 @import "modules/aboutme";
 @import "modules/group";
 
-// ______最終に分割検討中_____________________
+// ______分割検討_____________________
 // @import "side-bar";
 // @import "main-chat";
 

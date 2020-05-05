@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   # root to: "messages#index"
   root to: 'groups#index'
 
+  resources :maps, only: [:index]
+
+
   resources :users, only: [:edit, :update, :show]
   resources :aboutmes
 
