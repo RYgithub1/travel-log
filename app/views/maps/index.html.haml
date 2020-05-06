@@ -58,12 +58,12 @@
               var map;
               function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
-                  center: {lat: 35.922707, lng: 139.485114},
-                  zoom: 8
+                  center: {lat: 35.9078927, lng: 139.48189},
+                  zoom: 15
                 });
               }
 
-            %script{:src => "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"}
+            %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyC729-iqfLkDlVl-oYFHd4Jhb92FV2LOvI&callback=initMap"}
 
 
           .contentsMap__mapx__bottomAbout
