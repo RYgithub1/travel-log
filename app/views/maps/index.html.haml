@@ -15,17 +15,20 @@
     -#   width: 600px;
     -# %style#map{:type => "text/css"}
     -# FIXME:
-    :css
-      #map {
-        height: 600px;
-        width: 90%;
-        margin:0 auto;
-      }
-      html,body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+    -# :css
+    -#   #map {
+    -#     height: 600px;
+    -#     width: 90%;
+    -#     margin:0 auto;
+    -#   }
+    -#   html,body {
+    -#     height: 100%;
+    -#     margin: 0;
+    -#     padding: 0;
+    -#   }
+    -# FIXME:
+
+
 
 
   .body
@@ -50,21 +53,20 @@
           .contentsMap__mapx__middleMap
             マップ埋め込み
             ピン立てる-----
-            -# #js-map
-            -# .map
-            #map
-            -# %script#map{:type => "text/javascript"}
-            :javascript
-              var map;
-              function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-                  center: {lat: 35.9078927, lng: 139.48189},
-                  zoom: 15
-                });
-              }
+            #js-map.map
+            -# #map.map
+            -# #map
+            -# :javascript
+            -#   var map;
+            -#   function initMap() {
+            -#     map = new google.maps.Map(document.getElementById('map'), {
+            -#       center: {lat: 35.9078927, lng: 139.48189},
+            -#       zoom: 15
+            -#     });
+            -#   }
 
-            %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyC729-iqfLkDlVl-oYFHd4Jhb92FV2LOvI&callback=initMap"}
-
+            -# %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyC729-iqfLkDlVl-oYFHd4Jhb92FV2LOvI&callback=initMap"}
+            -# %script{:src => "map.js"}
 
           .contentsMap__mapx__bottomAbout
             選択したピンのアバウト抜粋
@@ -79,17 +81,6 @@
             Copyright (C) 2020 Tahoo! Japan Corporation. All Rights Reserved.
 
 
-          -# FIXME:API key
-          -# body閉じタグの直前
-          -# %script{:src => "script.js"}
-          -# %script{:src => "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"}
+    %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyC729-iqfLkDlVl-oYFHd4Jhb92FV2LOvI&callback=initMap"}
+    %script{:src => "map.js"}
 
-          -# :javascript
-          -#   :src => "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-          -# %script{:src => "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEYI&callback=initMap"}
-          -# %script{:src => "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer}
-          -# %script{:src => "script.js"}
-          -# %script{:src => "maps/script.js"}
-
-          -# %script{:type => "text/javascript",
-            -# :src  => "javascripts/script_#{2 + 7}"}
