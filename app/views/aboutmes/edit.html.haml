@@ -17,13 +17,6 @@
           = fo.label :name, "プロフィールを書こう"
           %br
           = fo.text_area :content, class: "newTextZ", placeholder: "国籍/ルート/期間/一言！"
-            -# = fo.text_area :content, class: "newTextZ content"
-            -# = fo.text_area :content, class: "newTextZ content", placeholder: "???"
-            -# = fo.text_area :content, class: "newTextZ", size: "600x100" %
-            -# .content::placeholder::after {
-            -#     display: block;
-            -#     content: "二行目";
-            -# }
         .newImage
           = fo.label :name, "写真アイコンを貼ろう"
           %br
@@ -35,5 +28,3 @@
           = fo.url_field :url, class: "newUrlZ"
         .newSendBtn
           = fo.submit "新About決定ボタン", class: "newSendBtnZ"
-          -# = fo.submit "新About決定ボタン"
-          -# = link_to "新About決定ボタン", new_aboutme_path, class: "newSendBtnZ" do

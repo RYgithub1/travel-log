@@ -21,7 +21,6 @@
         .content__right__bottom
           .content__right__bottom--userName
             = image_tag about.image, class: "content__right__bottom--userName--btn"
-            -# = link_to about.image, aboutmes_path(about.user), class: "content__right__bottom--userName--btn"
             = link_to about.url, aboutmes_path(about.user), class: "content__right__bottom--userName--btn"
           .content__right__bottom--date
             = about.created_at

@@ -12,7 +12,6 @@
     タイムゾーン
     スポット
     編集ボタンと削除ボタン
-    
 
   .profileDatas
     .profileData
@@ -32,24 +31,5 @@
           %br
           = fo.url_field :url, class: "newUrlZ"
 
-        -# .newUserId
-        -#   = fo.label :name, "user_idの番号を貼ろう（デフォ必要？）"
-        -#   = fo.text_field :user_id, class: "newUserId"
-
-
         .newSendBtn
-          -# = link_to "新About決定ボタン", new_aboutme_path, class: "newSendBtnZ"
-          -# = fo.label :name, "新プロフ決定ボタン"
           = fo.submit "新About決定ボタン", class: "newSendBtnZ"
-
-
-
--# リンク押して新規プロフ作成ページへ
-        -# <%= link_to "新規投稿", new_post_path, class: "header__right--btn" %>
-
--# = form_for(current_user) do |f|
--# .form
--#     = form_for [@message] do |f|
--#       .input-box
--#         = f.text_field :text, class: 'input-text'
--#       = f.submit "Send", class: 'submit-btn'
