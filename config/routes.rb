@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # get 'messages/index'
-  root to: 'groups#index'
+  root to: "maps#index"
 
   resources :maps, only: [:index]
-  resources :users, only: [:edit, :update, :show]
+  resources :users, only: [:show, :edit, :update]
   resources :aboutmes
 
   resources :groups, only: [:new, :create, :edit, :update] do

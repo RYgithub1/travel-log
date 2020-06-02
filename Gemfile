@@ -64,7 +64,6 @@ gem "devise"
 gem "carrierwave"
 gem "mini_magick"
 
-source 'https://rubygems.org'
 gem "gmaps4rails"
 gem "geocoder"
 gem "gon"
