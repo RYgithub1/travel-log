@@ -1,7 +1,5 @@
 class GroupsController < ApplicationController
 
-
-
   def index
   end
 
@@ -14,13 +12,10 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     if @group.save
       redirect_to root_path, notice: "Doorを新規作成"
-      # 　TODO: root 変更
     else
       render :new
     end
   end
-
-
 
   def edit
     @group = Group.find(params[:id])
@@ -30,7 +25,6 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     if @group.update(group_params)
       redirect_to group_messages_path(current_user), notice: "ノック相手更新しました"
-      # 　TODO: root 変更
     else
       render :edit
     end

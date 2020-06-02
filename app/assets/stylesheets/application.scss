@@ -9,14 +9,15 @@
 @import "modules/aboutme";
 @import "modules/group";
 
-// ______分割検討_____________________
-// @import "side-bar";
-// @import "main-chat";
+// ------リファクタリング検討--------
 
 .wrapper {
   display: flex;
   width: 100vw;
   height: 100vh;
+  // _____分割検討＿＿＿＿＿＿＿
+  // @import "side-bar";
+  // @import "main-chat";
   .sideBar {
     width: 20%;
     background-color: rgb(231, 155, 13);
